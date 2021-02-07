@@ -61,7 +61,7 @@ const displayMealDetail = name => {
 //rendering meal info
 const renderMealInfo = meal => {
     const mealDiv = document.getElementById('meal-details-content');
-
+    
     mealDiv.innerHTML = `
     <h2 class="recipe-title">${meal.strMeal}</h2>
     <p class="recipe-category">${meal.strCategory}</p>
@@ -70,26 +70,21 @@ const renderMealInfo = meal => {
     </div>
     <div class="recipe-instruction">
       <h3>Ingredients:</h3>
-      <p>${meal.strIngredient1}</p>
-      <p>${meal.strIngredient2}</p>
-      <p>${meal.strIngredient3}</p>
-      <p>${meal.strIngredient4}</p>
-      <p>${meal.strIngredient5}</p>
-      <p>${meal.strIngredient6}</p>
+      <p><i class="fas fa-hand-point-right"></i>  ${meal.strIngredient1}</p>
+      <p><i class="fas fa-hand-point-right"></i>  ${meal.strIngredient2}</p>
+      <p><i class="fas fa-hand-point-right"></i>  ${meal.strIngredient3}</p>
+      <p><i class="fas fa-hand-point-right"></i>  ${meal.strIngredient4}</p>
+      <p><i class="fas fa-hand-point-right"></i>  ${meal.strIngredient5}</p>
+      <p><i class="fas fa-hand-point-right"></i>  ${meal.strIngredient6}</p>
     </div>
     
     <div class="recipe-order">
-      <a href="#" target="_blank">Order Recipe</a>
+      <button href="#" target="_blank">Order Recipe</button>
     </div>
     `;
+
+    const searchBtn = document.getElementById('search-btn');
+    searchBtn.addEventListener("click", function(){
+        mealDiv.innerText = "";
+    })
 }
-
-
-
-
-
-
-
-
-
-
