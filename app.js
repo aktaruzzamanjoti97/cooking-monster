@@ -1,6 +1,6 @@
 //search meal by alphabetically
 const searchByAlphabet = (alphabet) => {
-    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${alphabet}`)
+    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${alphabet}`)
     .then(response => response.json())
     .then(data => getInputData(data.meals));
 }
@@ -16,7 +16,7 @@ searchBtn.addEventListener('click', function () {
 });
 
 
-//
+//function getInputData
 const getInputData = meals => {
     const mealsDiv = document.getElementById('meal');
     mealsDiv.innerHTML = "";
@@ -37,6 +37,7 @@ const getInputData = meals => {
 
         mealsDiv.appendChild(mealDiv);
 
+        
         mealDiv.onclick = function(){
             displayMealDetail(meal.strMeal);
         }
