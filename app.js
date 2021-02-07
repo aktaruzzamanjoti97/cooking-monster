@@ -1,3 +1,4 @@
+//search meal by alphabetically
 const searchByAlphabet = (alphabet) => {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${alphabet}`)
     .then(response => response.json())
@@ -5,7 +6,7 @@ const searchByAlphabet = (alphabet) => {
 }
 
 
-
+//fuction for search button
 const searchBtn = document.getElementById('search-btn');
 searchBtn.addEventListener('click', function () {
     const inputMeal = document.getElementById('search-input').value;
@@ -13,6 +14,7 @@ searchBtn.addEventListener('click', function () {
 });
 
 
+//
 const getInputData = meals => {
     const mealsDiv = document.getElementById('meal');
 
@@ -41,19 +43,21 @@ const getInputData = meals => {
 };
 
 
+//display ingredients for one meal when clicked
 const displayMealDetail = name => {
     const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`;
     fetch(url)
     .then(response => response.json())
-    .then(data => renderMealInfo())
+    .then(data => renderMealInfo(data.meals[0]))
 
 };
 
 
+//rendering meal info
 const renderMealInfo = meal => {
     const mealDiv = document.getElementById('meal-details-content');
 
-    const mealInfo = `
+    mealDiv.innerHTML = `
     <h2 class="recipe-title">${meal.strMeal}</h2>
     <p class="recipe-category">${meal.strCategory}</p>
     <div class="recipe-instruction">

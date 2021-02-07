@@ -105,12 +105,10 @@ body{
 }
 #meal-details-content{
     position: relative;
-    /* top: 50%; */
-    /* box-shadow: 10px 10px 40px gray; */
+   
     margin: 2rem 5rem;
     border-radius: 1rem;
-    /* border: 1px solid black; */
-    /* width: 90%; */
+   
     height: 90%;
     padding: 2rem;
     /* display: none; */
@@ -146,9 +144,6 @@ body{
     font-size: 1.2rem;
     font-weight: 700;
 }
-/* .recipie-order a:hover{
-
-} */
 
 
 
